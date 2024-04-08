@@ -43,10 +43,9 @@ Ahora se podra probar el funcionamiento:
 
 ![1712537064984](images/README/1712537064984.png)
 
-
 ## TEST
 
-For run tests:
+Para correr los tests:
 
 ```
 npm run test
