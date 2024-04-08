@@ -4,12 +4,13 @@ Aplicación para demostrar conocimientos en las técnologías: typescript, node,
 
 La aplicación genera un json token a partir de los datos de una tarjeta bancaria.
 
-La aplicación permite obtener datos de una tarjeta a partir de un token.
+La aplicación permite obtener datos de una tarjeta a partir de un token
 
 ## Tabla de Contenidos
 
 * Instalación
 * Uso
+* Test
 
 ## Instalación
 
@@ -36,14 +37,17 @@ En mi caso en el `.env` configure el puerto 3000 así que las peticiones se har�
 
 Ahora se podra probar el funcionamiento:
 
-1. Generar Token
+![1712537007416](images/README/1712537007416.png)
 
-![1712524699281](images/README/1712524699281.png)
+![1712537022713](images/README/1712537022713.png)
 
-![1712524807917](images/README/1712524807917.png)
+![1712537064984](images/README/1712537064984.png)
 
-2. Obtener Datos del token
 
-![1712524989720](images/README/1712524989720.png)
+## TEST
 
----
+For run tests:
+
+```
+npm run test
+```
