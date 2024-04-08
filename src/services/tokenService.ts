@@ -13,10 +13,9 @@ const SECRET_KEY = process.env.SECRET_KEY_APP ?? '998fwe1%';
 
 export const createToken = async (cardData: any): Promise<string> => {
     const token = jwt.sign({ cardData }, SECRET_KEY, { expiresIn: '1m' });
-    const { cvv, ...dataToStore } = cardData;
+    const { cvv,...dataToStore } = cardData;
 
     await redisClient.setEx(token, 60, JSON.stringify(dataToStore));
-    redisClient.quit();
 
     return token;
 };
@@ -25,13 +24,12 @@ export const verifyToken = async (token: string): Promise<any> => {
     try {
         jwt.verify(token, SECRET_KEY);
         const data = await redisClient.get(token);
-        redisClient.quit();
 
         if (!data) throw new Error('Token expired or invalid');
 
         return JSON.parse(data);
     } catch (error) {
-        console.error('Token verification failed:', error);
+        // console.error('Token verification failed:', error);
         throw error;
     }
 };

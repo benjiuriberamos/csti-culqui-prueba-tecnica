@@ -7,7 +7,7 @@ export const tokenBearerValidation = (tokenBearer:string): boolean => {
   }
 
   if(!emailRegex.test(tokenBearer)) {
-    throw new Error('Invalid token bearer.');
+        throw new Error('Invalid token bearer.');
   }
 
   return true;
